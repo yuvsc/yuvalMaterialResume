@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Raleway:500,200,700" rel="stylesheet">
-    <style>a,h1,h2,h3,h4,h5,h6,li,p{font-family:Raleway,sans-serif}.resume{background-color:#1f1f1f;min-height:100vh}.resume .main{height:100%;width:700px;background-color:#fff;padding:0 25px;margin:0 auto}.resume .main .header{border-bottom:2px solid #ddd}.resume .main .header .page-title-container{margin:0 auto;text-align:center;padding-bottom:10px}.resume .main .header .page-title{font-size:48pt;display:inline}.resume .main .header .page-title-first{font-weight:400}.resume .main .header .page-title-last{font-weight:200}.resume .main .header .header-icons{text-align:center}.resume .main .header .header-icons .page-subhead{margin:1rem 15px;display:inline}.resume .main .header .fa{padding-right:10px}.resume .main .indented{padding-left:40px}.resume .main .category-row{padding-bottom:2px}.resume .main .category-row .category{margin-right:10px;padding-left:5px;padding-right:10px;border-bottom:1px solid #ddd;border-right:1px solid #ddd}.resume .main .category-row .category-row-title{margin:.4rem 0}.resume .main .category-row .category-subtitle,.resume .main .category-row .category-title{display:inline;margin-top:10px;margin-bottom:5px}.resume .main .category-row .category-bullets{margin-top:5px}.resume .main .category-row li,.resume .main .category-row p{font-size:smaller}category:last-of-type category-item:last-of-type .category,sidebar-category:last-of-type .category{border-bottom:0!important;padding-bottom:0!important;margin-bottom:0!important}</style>
+    <style>a,h1,h2,h3,h4,h5,h6,li,p{font-family:Raleway,sans-serif}.resume{background-color:#1f1f1f;min-height:100vh}.resume .main{height:100%;width:700px;background-color:#fff;padding:0 25px;margin:0 auto}.resume .main .header{border-bottom:2px solid #ddd}.resume .main .header .page-title-container{margin:0 auto;text-align:center;padding-bottom:5px}.resume .main .header .page-title{font-size:36pt/*48pt original*/;display:inline}.resume .main .header .page-title-first{font-weight:400}.resume .main .header .page-title-last{font-weight:200}.resume .main .header .header-icons{text-align:center}.resume .main .header .header-icons .page-subhead{font-size:14px;margin:1rem 15px;display:inline}.resume .main .header .fa{padding-right:10px}.resume .main .indented{padding-left:40px}.resume .main .category-row{padding-bottom:2px}.resume .main .category-row .category{margin-right:10px;padding-left:5px;padding-right:10px;border-bottom:1px solid #ddd;border-right:1px solid #ddd}.resume .main .category-row .category-row-title{margin:.4rem 0}.resume .main .category-row .category-subtitle,.resume .main .category-row .category-title{display:inline;margin-top:10px;margin-bottom:5px}.resume .main .category-row .category-bullets{margin-top:5px}.resume .main .category-row li,.resume .main .category-row p{font-size:smaller}category:last-of-type category-item:last-of-type .category,sidebar-category:last-of-type .category{border-bottom:0!important;padding-bottom:0!important;margin-bottom:0!important} p{margin:8px}</style>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
@@ -28,75 +28,76 @@
                         phone="(502)-468-8954">
         </resume-heading>
         <resume-body>
-            <resume-column flex="20">
+            <resume-column flex="40">
                 <sidebar-category name="Education">
-                    <p>University of Louisville</p>
-                    <p>Graduating May 2017</p>
-                    <p>Computer Science</p>
-                    <p>Computer Engineering</p>
-                    <p>GPA - 3.9</p>
+                    <p>Speed School of Engineering, University of Louisville</p>
+                    <p>Bachelor of Science in Computer Engineering and Computer Science</p>
+                    <p>GPA - 3.9 / 4.0</p>
+					<p>Graduating May 2017</p>
                 </sidebar-category>
                 <sidebar-category name="Achievements">
-                    <p>DragonHacks 2nd Place Spring 2016</p>
-                    <P>University Innovation Fellow 2016</p>
-                    <p>CECS Outstanding Undergraduate Award 2016</p>
-                    <p>UofL Honors Student [Fall 2013 - Present]</p>
-                    <p>DerbyHacks Hackathon Organizer</p>
+                    <p>Second Place at DragonHacks <i>(Spring 2016)</i></p>
+                    <P>University Innovation Fellow <i>(2016)</i></p>
+                    <p>CECS Outstanding Undergraduate Award <i>(2016)</i></p>
+                    <p>UofL Honors Student <i>(Fall 2013 - Present)</i></p>
+                    <p>Dean's List <i>(Fall 2013, Fall 2014- Spring 2016)</i></p>
+					<p>Dean's Scholar <i>(Spring 2014, Summer 2014, Fall 2016)</i></p>
+					<p>Participant of ACM-ICPC Programming Competition <i>(2016)</i></p>
+					</sidebar-category>
+				<sidebar-category name="Organizations">
+                    <p>Speed School of Engineering ACM, Secretary<i>(5/2015 - Present)</i></p>
+					<p>Algorithms Student Interest Group, Leader <i>(9/2016 - Present)</i></p>
+                    <p>Tau Beta Pi KY-B, Member</p>
+                    <p>Speed School of Engineering IEEE, SWE, SSSC, Member</p>
                 </sidebar-category>
                 <sidebar-category name="Coursework">
-                    <p>Data Structures</p>
-                    <p>Algorithms</p>
-                    <p>Database Design</p>
-                    <p>Operating Systems</p>
-                    <p>Automata Theory</p>
-                    <p>Discrete Math</p>
+                    <p>Data Structures,  Algorithms,  Operating Systems,  Automata Theory,  Information Security,  Object Oriented Design,  Microcomputer Design,  Embedded Systems,  Artificial Intelligence</p>
                 </sidebar-category>
             </resume-column>
-            <resume-column flex="80">
-                <category name="Professional Experience">
-                    <category-item title="Data Analytics Intern" subtitle="Humana (Spring 2017)">
-                        <li>Co-Founded company in 2015</li>
-                        <li>Applies machine learning to customer purchase history for marketing materials</li>
-                        <li>Featured on Product Hunt, clients include two Fourtune 500 companies</li>
-                    </category-item>
-                    <category-item title="Database Administration Intern" subtitle="Humana (Summer 2016)">
-                        <li>Worked in an Agile Environment on the iOS team with other interns</li>
-                        <li>Used JIRA to collaborate with developers are on stories</li>
-                        <li>Collaborated with other interns on design</li>
-                        <li>Used Objective-C to create new app features and scaled on Kubernetes</li>
-                    </category-item>
-                    <category-item title="Data Science Intern" subtitle="Humana (Summer 2015)">
-                        <li>Worked on the iOS application</li>
-                        <li>Added new features and fixed several bugs on the app</li>
-                        <li>Greenfield project to research a better way to call cars to your location</li>
-                    </category-item>
-                </category>
-                <category name="Projects">
-                    <category-item title="Co-Founder" subtitle="Enterpernuership and Innovation Club">
-                        <li>Such and amazing app that did a lot of things</li>
-                        <li>Integrations with Uber, Postmates, Spotify, and Office 365</li>
-                        <li>Written with Ionic Framework and hosted on Kubernetes 😎 for the cred</li>
-                    </category-item>
-                    <category-item title="Organizer" subtitle="DerbyHacks 2016 & 2017">
-                        <li>Food-storage-as-a-Service app that lets people put their food in your fridge</li>
-                        <li>All storage and payment in based on the blockchain with Ethereum and Mist</li>
-                    </category-item>
-                    <category-item title="I dunno" subtitle="github.com/tswizzle/turnup">
-                        <li>A new programming language with a focus on developers turning up</li>
-                        <li>Implemented in Go and requires Docker 1.12 with Ceph on CoreOS</li>
-                    </category-item>
-                </category>
-                <category name="Skills">
+            <resume-column flex="90">
+				<category name="Skills">
                     <category-item title="Data Analytics">
-                        <li><strong>Dank Memes</strong> I can find the deepest, dankest memes out there on the inerwebs</li>
-                        <li><strong>Distributed Systems</strong> I only run my apps on Kubernetes and a CoreOS cluster</li>
-                        <li><strong>Tooling</strong> I literally treat Dan Abromov's Twitter as holy gospel</li>
-                        <li><strong>Frameworks</strong> React, Redux, Reselect, Redankmeme, Revenant, Angular</li>
+                        <li><strong>Databases:</strong> Oracle \ MySQL \ SQL Server \ Netezza</li>
+                        <li><strong>Reporting Tools:</strong> Tableau \ QlikView \ Splunk \ SAS</li>
+                        <li><strong>Data Management:</strong> Toad \ Hadoop \ Sqoop \ Hive \ Dataedo</li>
                     </category-item>
                     <category-item title="Technologies">
-                        <li><strong>Experienced With</strong> Web &amp; Hybrid App Development \ Functional Programming</li>
-                        <li><strong>Programming</strong> Javascript \ Scala \ Python \ PHP \ C \ Java</li>
-                        <li><strong>Databases</strong> RethinkDB \ MongoDB \ MySQL \ PostgreSQL \ Redis</li>
+                        <li><strong>Frameworks:</strong> HDFS \ NodeJS \ Express \ Flask \ Django \ Bootstrap \ Heroku </li>
+                        <li><strong>Languages:</strong> Java \ Python \ C++ \ SQL \ JavaScript \ HTML \ CSS</li>
+						<li><strong>Experienced With:</strong> Github \ PuTTY \ VirtualBox \ VMWare \ Windows IDE's (Eclipse, Visual Studio, etc.)</li>
+                    </category-item>
+                </category>
+                <category name="Community Involvement">
+                    <category-item title="Co-Founder, VP" subtitle="Enterpernuership and Innovation Club (2016-Present)">
+                        <li>Developed pop up classes for students to gain pitching and design thinking skills</li>
+                        <li>Hosted mini pitch competitions where participants recieved awards from events sponsors</li>
+                        <li>Created a curriculum for students to become agents of change at the University of Louisville</li>
+                    </category-item>
+                    <category-item title="Organizer, Mentor" subtitle="DerbyHacks Hackathon (2016-Present)">
+						<li>Established the first Major League Hackathon at the UofL</li>
+                        <li>Reached out to large local companies (Humana, Kentucky Fried Chiken, Microsoft, etc.) to sponsor the event</li>
+						<li>Communicated with various sponsors to coordinate logistics </li>
+                    </category-item>
+                    <category-item title="Volunteer, Mentor" subtitle="Winner's Circle Robotics (2015-2017)">
+                        <li>Assisted with design and implementation of website</li>
+						<li>Helped high school students build robots for competition</li>
+                    </category-item>
+                </category>
+				<category name="Professional Experience">
+                    <category-item title="Data Analytics Intern" subtitle="SuperFan (Spring 2017)">
+                        <li>Analyzed datasets using MySQL and Tableau</li>
+                        <li>Created reports to investigate user activities and lifecycle</li>
+						<li>Discovered and categorized users in order to increase user acticity and engagement</li>
+                    </category-item>
+                    <category-item title="Database Administration Intern" subtitle="Humana (Summer 2016)">
+                        <li>Parsed through large SQL queries using Python in Hadoop</li>
+                        <li>Analyzed metadata found using Tableau</li>
+						<li>Documented for future automation of discovery</li>
+                    </category-item>
+                    <category-item title="Data Science Intern" subtitle="Humana (Summer 2015)">
+                        <li>Created a report using SAS, QlikView, and Splunk</li>
+                        <li>Worked in an Agile environment with rotating roles</li>
+                        <li>Collaborated with other interns on projects</li>
                     </category-item>
                 </category>
             </resume-column>

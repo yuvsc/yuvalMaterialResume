@@ -24,8 +24,8 @@ angular.module('Resume', ['ngMaterial'])
     },
     template: `<div class="header">
       <div class="page-title-container">
-        <h1 class="page-title page-title-first">{{firstName}}</h1>
-        <h1 class="page-title page-title-last">{{lastName}}</h1>
+        <h2 class="page-title page-title-first">{{firstName}}</h2>
+        <h2 class="page-title page-title-last">{{lastName}}</h2>
       </div>
       <div class="header-icons">
         <span ng-if="website" class="md-subhead page-subhead"><i class="fa fa-lg fa-code"></i>{{website}}</span>
