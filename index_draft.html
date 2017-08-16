@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Resume</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:500,200,700" rel="stylesheet">
+    <style>a,h1,h2,h3,h4,h5,h6,li,p{font-family:Raleway,sans-serif}.resume{background-color:#1f1f1f;min-height:100vh}.resume .main{height:100%;width:700px;background-color:#fff;padding:0 25px;margin:0 auto}.resume .main .header{border-bottom:2px solid #ddd}.resume .main .header .page-title-container{margin:0 auto;text-align:center;padding-bottom:5px}.resume .main .header .page-title{font-size:36pt/*48pt original*/;display:inline}.resume .main .header .page-title-first{font-weight:400}.resume .main .header .page-title-last{font-weight:200}.resume .main .header .header-icons{text-align:center}.resume .main .header .header-icons .page-subhead{font-size:14px;margin:1rem 6px;display:inline}.resume .main .header .fa{padding-right:10px}.resume .main .indented{padding-left:40px}.resume .main .category-row{padding-bottom:2px}.resume .main .category-row .category{margin-right:10px;padding-left:5px;padding-right:10px;border-bottom:1px solid #ddd;border-right:1px solid #ddd}.resume .main .category-row .category-row-title{margin:.2rem 0}.resume .main .category-row .category-subtitle,.resume .main .category-row .category-title{display:inline;margin-top:2px;margin-bottom:2px}.resume .main .category-row .category-bullets{margin-top:-2px;}.resume .main .category-row li,.resume .main .category-row p{font-size:smaller}category:last-of-type category-item:last-of-type .category,sidebar-category:last-of-type .category{border-bottom:0!important;padding-bottom:0!important;margin-bottom:0!important} p{margin:8px}
+	p.obj{margin-right:10px;padding-left:5px;padding-right:10px;border-bottom:1px solid #ddd;border-right:1px solid #ddd; padding-bottom:8px; margin-bottom:4px}
+	div.second_page{padding-top:20px}</style>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
+    <!-- <script src="resume.js"></script> -->
+    <script>"use strict";angular.module("Resume",["ngMaterial"]).directive("resume",function(){return{restrict:"E",transclude:!0,template:'<div class="resume">\n      <section class="main" ng-transclude></section>\n    </div>'}}).directive("resumeHeading",function(){return{restrict:"E",scope:{firstName:"@",lastName:"@",website:"@",phone:"@",email:"@",github:"@",linkedin:"@"},template:'<div class="header">\n      <div class="page-title-container">\n        <h1 class="page-title page-title-first">{{firstName}}</h1>\n        <h1 class="page-title page-title-last">{{lastName}}</h1>\n      </div>\n      <div class="header-icons">\n        <span ng-if="website" class="md-subhead page-subhead"><i class="fa fa-lg fa-globe"></i>{{website}}</span>\n        <span ng-if="phone" class="md-subhead page-subhead"><i class="fa fa-lg fa-phone"></i>{{phone}}</span>\n        <span ng-if="email" class="md-subhead page-subhead"><i class="fa fa-lg fa-envelope"></i>{{email}}</span>\n        <span ng-if="github" class="md-subhead page-subhead"><i class="fa fa-lg fa-github"></i>{{github}}</span>\n        <span ng-if="linkedin" class="md-subhead page-subhead"><i class="fa fa-lg fa-linkedin-square"></i>{{linkedin}}</span>\n      </div>\n    </div>'}}).directive("resumeBody",function(){return{restrict:"E",transclude:!0,template:'<div layout="row" ng-transclude></div>'}}).directive("resumeColumn",function(){return{restrict:"E",transclude:!0,template:"<div ng-transclude></div>"}}).directive("sidebarCategory",function(){return{restrict:"E",scope:{name:"@"},transclude:!0,template:'<div flex="" class="category-row">\n      <div class="category">\n        <h5 class="category-row-title">{{name}}</h5>\n        <ng-transclude></ng-transclude>\n      </div>\n    </div>'}}).directive("category",function(){return{restrict:"E",scope:{name:"@"},transclude:!0,template:'<div flex="" class="category-row">\n      <h4 class="category-row-title">{{name}}</h4>\n      <ng-transclude></ng-transclude>\n    </div>'}}).directive("categoryItem",function(){return{restrict:"E",scope:{title:"@",subtitle:"@"},transclude:!0,template:'<div class="category">\n        <h5 class="category-title md-body-2">{{title}}</h5>&nbsp;\n        <h5 class="category-subtitle md-caption">{{subtitle}}</h5>\n        <ul class="category-bullets" ng-transclude></ul>   </div>'}});</script>
+</head>
+
+<body ng-app="Resume" ng-cloak>
+    <resume>
+        <resume-heading first-name="Yuval"
+                        last-name="Schaal"
+						website="yuval.schaal.me"
+                        linkedin="yuval-schaal"
+                        github="yuvsc"
+                        email="yuval.schaal@gmail.com"
+                        phone="(502)-468-8954">
+        </resume-heading>
+        <resume-body>
+            <resume-column flex="40">
+                <sidebar-category name="Education">
+                    <p>Speed School of Engineering, University of Louisville</p>
+                    <p>Bachelor of Science in Computer Engineering and Computer Science</p>
+                    <p>GPA - 3.9 / 4.0</p>
+					<p>Graduating May 2017</p>
+                </sidebar-category>
+                <sidebar-category name="Achievements">
+                    <p>CECS Outstanding Undergraduate Award <i>(2016)</i></p>
+                    <P>University Innovation Fellow Stanford University <i>(2016)</i></p>
+                    <p>Second Place at DragonHacks <i>(Spring 2016)</i></i></p>
+                    <p>UofL Honors Student <i>(Fall 2013 - Present)</i></p>
+                    <p>Dean's List <i>(Fall 2013, Fall 2014 - Spring 2016)</i></p>
+					<p>Dean's Scholar <i>(Spring 2014, Summer 2014, Fall 2016)</i></p>
+					<p>Participant of ACM-ICPC Programming Competition <i>(2016)</i></p>
+					</sidebar-category>
+				<sidebar-category name="Organizations">
+                    <p>Speed School of Engineering ACM, Secretary<i>(5/2015 - Present)</i></p>
+					<p>Algorithms Student Interest Group, Leader <i>(9/2016 - Present)</i></p>
+                    <p>Tau Beta Pi KY-B, Member</p>
+                    <p>Speed School of Engineering IEEE, SWE, SSSC, Member</p>
+                </sidebar-category>
+                <sidebar-category name="Coursework">
+                    <p>Data Structures,  Algorithms,  Operating Systems,  Automata Theory,  Information Security,  Object Oriented Design,  Microcomputer Design,  Embedded Systems,  Artificial Intelligence</p>
+                </sidebar-category>
+            </resume-column>
+            <resume-column flex="90">
+				<category name="Objective">
+					<div style="font-weight:normal">
+					<p class="obj">To combine my passions of entrepreneurship, innovation, and technology in order to benefit and advance the community</p>
+					
+                    <!--<category-item>
+					</category-item>-->
+					</div>
+                </category>
+				<category name="Skills">
+                    <category-item title="Data Analytics">
+                        <li><strong>Databases:</strong> Oracle \ MySQL \ SQL Server \ Netezza</li>
+                        <li><strong>Reporting Tools:</strong> Tableau \ QlikView \ Splunk \ SAS</li>
+                        <li><strong>Data Management:</strong> Toad \ Hadoop \ Sqoop \ Hive \ Dataedo</li>
+                    </category-item>
+                    <category-item title="Technologies">
+                        <li><strong>Frameworks:</strong> HDFS \ NodeJS \ Express \ Flask \ Django \ Bootstrap \ Heroku </li>
+                        <li><strong>Languages:</strong> Java \ Python \ C++ \ SQL \ JavaScript \ HTML \ CSS</li>
+						<li><strong>Experienced With:</strong> Github \ PuTTY \ VirtualBox \ VMWare \ Windows IDE's (Eclipse, Visual Studio, etc.)</li>
+                    </category-item>
+                </category>
+                <category name="Community Involvement">
+                    <category-item title="Co-Founder, VP" subtitle="Entrepreneurship and Innovation Club (2016-Present)">
+                        <li>Developed pop-up classes for students to gain pitching and design thinking skills</li>
+                        <li>Hosted mini pitch competitions where participants recieved awards from events sponsors</li>
+                        <li>Created a curriculum for students to become agents of change at the University of Louisville</li>
+                    </category-item>
+                    <category-item title="Organizer, Mentor" subtitle="DerbyHacks Hackathon (2016-Present)">
+						<li>Established the first Major League Hackathon at the UofL</li>
+                        <li>Reached out to large local companies (Humana, Yum! Brands, Microsoft, etc.) to sponsor the event. Raised $15,000</li>
+						<li>Communicated with various sponsors to coordinate logistics </li>
+                    </category-item>
+                    <category-item title="Volunteer, Mentor" subtitle="Winner's Circle Robotics (2015-2017)">
+                        <li>Assisted with design and implementation of website</li>
+						<li>Helped high school students come up with robot designs for FIRST robotics competition</li>
+                    </category-item>
+                </category>
+				<category name="Professional Experience">
+					<category-item title="Software Engineering Intern" subtitle="CBSi (Summer 2017)">
+                        <li>Developed backwards compatible Symphony bundles with PHP</li>
+                        <li>Configured and created backend features for developers</li>
+						<li>Used Jira for assigned tasks and deployed using Bamboo</li>
+                    </category-item>
+                    <category-item title="Data Analytics Intern" subtitle="SuperFan (Spring 2017)">
+                        <li>Analyzed datasets using MySQL and Tableau</li>
+                        <li>Created reports to investigate user activities and lifecycle</li>
+						<li>Discovered and categorized users in order to increase user activity and engagement</li>
+                    </category-item>
+                    <category-item title="Database Administration Intern" subtitle="Humana (Summer 2016)">
+                        <li>Parsed through large SQL queries using Python in Hadoop</li>
+                        <li>Analyzed metadata found using Tableau</li>
+						<li>Documented for future automation of discovery</li>
+                    </category-item>
+                    <category-item title="Data Science Intern" subtitle="Humana (Summer 2015)">
+                        <li>Created a report using SAS, QlikView, and Splunk</li>
+                        <li>Worked in an agile environment with rotating roles</li>
+                        <li>Collaborated with other interns on projects</li>
+                    </category-item>
+                </category>
+            </resume-column>
+        </resume-body>
+		<!-- second page -->
+		<div class="second_page">
+		<resume-body>
+			<resume-column flex="40">
+                <sidebar-category name="Hobbies">
+					<p>Swim Louisville Masters competitive swimming</p>
+                    <p>Mini marathon running</p>
+                    <p>Sprint Triathlons</p>
+					<p>Traveling</p>
+				</sidebar-category>
+				<sidebar-category name="Athletic Achievements">
+					<p>Oldham County Parks and Recreation Sprint Triathlon, First Place Female Age Group</p>
+                    <!--<p>Highlands Cup 5K Run, Second Place</p>-->
+                    <p>USMS Summer Nationals - Women's 200 Meter IM, Third Place, Women's 18-24</p>
+					<p>Kentucky Derby Festival Mini Marathon, Finisher</p>
+				</sidebar-category>
+			</resume-column>
+			<resume-column flex="90">
+				<category name="Publications">
+					<category-item title="Mathematical Analysis of the Normal Anatomy of the Aging Fovea">
+						</br>
+						<li>Mathematical Analysis of the Normal Anatomy of the Aging Fovea </br>
+Gupta A., Nesmith B., Strange T., Schaal Y,, Schaal S.</br>
+The Association for Research in Vision and Ophthalmology (ARVO) Annual meeting, May 2014, Orlando, FL, USA</li>
+						</br>
+                        <li>Mathematical Analysis of the Normal Anatomy of the Aging Fovea</br>
+Brooke Lw Nesmith, Akash Gupta, Taylor Strange, Yuval Schaal, and Shlomit Schaal</br>
+Invest. Ophthalmol. Vis. Sci. published 28 August 2014 doi:10.1167/iovs.14-15278</br>
+http://www.iovs.org/content/early/2014/08/2</li>
+						</br>
+						<li>Mathematical Analysis of the Normal Anatomy of the Aging Fovea</br>
+Nesmith B, Gupta A, , Strange T, Schaal Y, Schaal S</br>
+Research Louisville! Louisville, KY, 2014</li>
+					</category-item>
+				</category>
+			</resume-column>
+			</div>
+		</resume-body>
+    </resume>
+</body>
+
+</html>
