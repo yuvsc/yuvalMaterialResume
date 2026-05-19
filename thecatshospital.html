@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Cat's Hospital, LLC — Wellesley, MA</title>
+<meta name="description" content="Veterinary Hospital exclusively for cats & their owners. Medical & wellness examination, surgery, radiology & geriatric care. Located in Wellesley, MA.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #F7F3EE;
+    --warm-white: #FDFAF7;
+    --sage: #7A8C78;
+    --deep-sage: #4A5E48;
+    --terracotta: #C4745A;
+    --charcoal: #2C2C2A;
+    --mid-gray: #6B6B68;
+    --light-line: rgba(44,44,42,0.1);
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'DM Sans', system-ui, sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--cream);
+    color: var(--charcoal);
+    font-family: var(--sans);
+    font-size: 15px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.2rem 3rem;
+    background: rgba(247,243,238,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--light-line);
+  }
+  .nav-logo {
+    font-family: var(--serif);
+    font-size: 1.25rem;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    color: var(--charcoal);
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--terracotta); font-style: italic; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--mid-gray);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--terracotta); }
+  .nav-cta {
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--warm-white);
+    background: var(--deep-sage);
+    padding: 0.55rem 1.4rem;
+    border-radius: 2rem;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .nav-cta:hover { background: var(--terracotta); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 80px;
+  }
+  .hero-left {
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 5rem 4rem 5rem 5rem;
+  }
+  .hero-eyebrow {
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 1.5rem;
+    display: flex; align-items: center; gap: 0.75rem;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    display: block; width: 2rem; height: 1px;
+    background: var(--sage);
+  }
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(3rem, 5vw, 4.5rem);
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--charcoal);
+    margin-bottom: 1.5rem;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--terracotta);
+  }
+  .hero-desc {
+    font-size: 1rem;
+    color: var(--mid-gray);
+    max-width: 420px;
+    margin-bottom: 2.5rem;
+    line-height: 1.8;
+  }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary {
+    font-size: 0.8rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 0.85rem 2rem; border-radius: 2rem;
+    background: var(--terracotta); color: #fff;
+    text-decoration: none; transition: transform 0.2s, background 0.2s;
+  }
+  .btn-primary:hover { background: var(--deep-sage); transform: translateY(-1px); }
+  .btn-secondary {
+    font-size: 0.8rem; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 0.85rem 2rem; border-radius: 2rem;
+    border: 1.5px solid var(--charcoal); color: var(--charcoal);
+    text-decoration: none; transition: border-color 0.2s, color 0.2s;
+  }
+  .btn-secondary:hover { border-color: var(--terracotta); color: var(--terracotta); }
+
+  .hero-right {
+    position: relative;
+    background: var(--deep-sage);
+    overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .hero-cat-art {
+    width: 100%; height: 100%;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .hero-right::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(74,94,72,0.6) 0%, transparent 70%);
+  }
+  .hero-svg { width: 340px; height: 340px; opacity: 0.15; z-index: 0; }
+  .hero-info-card {
+    position: absolute; bottom: 2.5rem; left: 2.5rem; z-index: 2;
+    background: rgba(247,243,238,0.12);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 1rem;
+    padding: 1.25rem 1.5rem;
+    color: #fff;
+  }
+  .hero-info-card .label {
+    font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase;
+    opacity: 0.7; margin-bottom: 0.25rem;
+  }
+  .hero-info-card .value {
+    font-family: var(--serif); font-size: 1.1rem; font-weight: 300;
+  }
+
+  /* ── INFO STRIP ── */
+  .info-strip {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid var(--light-line);
+    border-bottom: 1px solid var(--light-line);
+  }
+  .info-item {
+    padding: 2rem 2.5rem;
+    border-right: 1px solid var(--light-line);
+    display: flex; align-items: flex-start; gap: 1rem;
+  }
+  .info-item:last-child { border-right: none; }
+  .info-icon {
+    font-size: 1.4rem; margin-top: 0.1rem; flex-shrink: 0;
+  }
+  .info-item h3 {
+    font-family: var(--sans); font-size: 0.7rem; font-weight: 500;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--sage); margin-bottom: 0.3rem;
+  }
+  .info-item p { font-size: 0.88rem; color: var(--charcoal); line-height: 1.5; }
+  .info-item a { color: var(--terracotta); text-decoration: none; }
+
+  /* ── SECTIONS ── */
+  section { padding: 6rem 5rem; }
+  .section-label {
+    font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--sage); margin-bottom: 1rem;
+    display: flex; align-items: center; gap: 0.75rem;
+  }
+  .section-label::before { content: ''; display: block; width: 1.5rem; height: 1px; background: var(--sage); }
+  .section-title {
+    font-family: var(--serif); font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 300; line-height: 1.15; margin-bottom: 1.5rem;
+  }
+  .section-title em { font-style: italic; color: var(--terracotta); }
+
+  /* ── SERVICES ── */
+  .services-section { background: var(--warm-white); }
+  .services-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5px;
+    background: var(--light-line);
+    border: 1px solid var(--light-line);
+    border-radius: 1rem;
+    overflow: hidden;
+    margin-top: 3rem;
+  }
+  .service-card {
+    background: var(--warm-white);
+    padding: 2rem;
+    transition: background 0.2s;
+  }
+  .service-card:hover { background: #F0EBE4; }
+  .service-card .svc-icon { font-size: 1.6rem; margin-bottom: 1rem; }
+  .service-card h3 {
+    font-family: var(--serif); font-size: 1.2rem; font-weight: 400;
+    margin-bottom: 0.5rem; color: var(--charcoal);
+  }
+  .service-card p { font-size: 0.85rem; color: var(--mid-gray); line-height: 1.6; }
+
+  /* ── ABOUT ── */
+  .about-section {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 5rem; align-items: center;
+  }
+  .about-img-wrap {
+    position: relative;
+    aspect-ratio: 3/4;
+    background: var(--deep-sage);
+    border-radius: 1rem;
+    overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .about-img-wrap::before {
+    content: '🐾';
+    font-size: 6rem; opacity: 0.12;
+  }
+  .about-badge {
+    position: absolute; bottom: 1.5rem; right: 1.5rem;
+    background: var(--terracotta); color: #fff;
+    border-radius: 50%;
+    width: 90px; height: 90px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    font-family: var(--serif);
+  }
+  .about-badge .year { font-size: 1.4rem; font-weight: 400; line-height: 1; }
+  .about-badge .since { font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.85; }
+  .about-text p { color: var(--mid-gray); margin-bottom: 1rem; font-size: 0.95rem; line-height: 1.8; }
+  .about-text p strong { color: var(--charcoal); font-weight: 500; }
+  .vet-name {
+    font-family: var(--serif); font-size: 1.4rem; font-weight: 300;
+    color: var(--charcoal); margin: 1.5rem 0 0.25rem;
+  }
+  .vet-title { font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--sage); }
+
+  /* ── EMERGENCY ── */
+  .emergency-section {
+    background: var(--charcoal); color: var(--cream);
+    padding: 5rem;
+  }
+  .emergency-section .section-label { color: var(--terracotta); }
+  .emergency-section .section-label::before { background: var(--terracotta); }
+  .emergency-section .section-title { color: var(--cream); }
+  .emergency-section .section-title em { color: var(--terracotta); }
+  .emergency-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem; margin-top: 2.5rem;
+  }
+  .emg-card {
+    border: 1px solid rgba(247,243,238,0.12);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    transition: border-color 0.2s;
+  }
+  .emg-card:hover { border-color: var(--terracotta); }
+  .emg-card h4 { font-family: var(--serif); font-weight: 400; font-size: 1.1rem; color: var(--cream); margin-bottom: 0.4rem; }
+  .emg-card p { font-size: 0.82rem; color: rgba(247,243,238,0.6); }
+  .emg-card a { color: var(--terracotta); text-decoration: none; }
+  .after-hours {
+    background: rgba(196,116,90,0.12);
+    border: 1px solid var(--terracotta);
+    border-radius: 0.75rem; padding: 1.5rem 2rem;
+    margin-top: 2rem;
+    display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;
+  }
+  .after-hours-label {
+    font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--terracotta); margin-bottom: 0.3rem;
+  }
+  .after-hours-num { font-family: var(--serif); font-size: 1.6rem; color: #fff; font-weight: 300; }
+
+  /* ── CONTACT ── */
+  .contact-section {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 5rem; align-items: start;
+  }
+  .contact-info h4 { font-family: var(--serif); font-weight: 400; font-size: 1.1rem; margin: 1.5rem 0 0.4rem; }
+  .contact-info p, .contact-info a { font-size: 0.9rem; color: var(--mid-gray); text-decoration: none; }
+  .contact-info a:hover { color: var(--terracotta); }
+  .map-placeholder {
+    aspect-ratio: 4/3;
+    background: var(--deep-sage);
+    border-radius: 1rem;
+    overflow: hidden;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    color: rgba(255,255,255,0.6); gap: 0.75rem;
+    font-family: var(--serif); font-size: 1.1rem;
+    font-style: italic;
+  }
+  .map-placeholder .map-icon { font-size: 2.5rem; }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--light-line);
+    padding: 2rem 5rem;
+    display: flex; align-items: center; justify-content: space-between;
+    font-size: 0.78rem; color: var(--mid-gray);
+    flex-wrap: wrap; gap: 1rem;
+  }
+  footer a { color: var(--mid-gray); text-decoration: none; }
+  footer a:hover { color: var(--terracotta); }
+  .footer-disclaimer {
+    font-size: 0.72rem; color: rgba(107,107,104,0.6);
+    max-width: 500px; font-style: italic;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .hero-left > * {
+    animation: fadeUp 0.7s ease both;
+  }
+  .hero-left > *:nth-child(1) { animation-delay: 0.1s; }
+  .hero-left > *:nth-child(2) { animation-delay: 0.2s; }
+  .hero-left > *:nth-child(3) { animation-delay: 0.3s; }
+  .hero-left > *:nth-child(4) { animation-delay: 0.4s; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-left { padding: 4rem 1.5rem 3rem; }
+    .hero-right { min-height: 260px; }
+    .info-strip { grid-template-columns: 1fr; }
+    .info-item { border-right: none; border-bottom: 1px solid var(--light-line); }
+    section { padding: 4rem 1.5rem; }
+    .about-section, .contact-section { grid-template-columns: 1fr; gap: 2.5rem; }
+    .emergency-section { padding: 4rem 1.5rem; }
+    footer { padding: 1.5rem; flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">The <span>Cat's</span> Hospital</a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">Our Team</a></li>
+    <li><a href="#emergency">Emergency</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="tel:7812376565" class="nav-cta">📞 Call Now</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" style="padding:0">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Exclusively Feline · Wellesley, MA</div>
+    <h1>Exceptional care<br>for your <em>beloved</em><br>feline companion.</h1>
+    <p class="hero-desc">A veterinary hospital dedicated solely to cats — from kitten wellness to senior care. Expert medicine in a calm, dog-free environment your cat will actually appreciate.</p>
+    <div class="hero-actions">
+      <a href="tel:7812376565" class="btn-primary">Book an Appointment</a>
+      <a href="#services" class="btn-secondary">Our Services</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-cat-art">
+      <svg class="hero-svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M100 20 C60 20, 30 50, 30 100 C30 150, 60 180, 100 180 C140 180, 170 150, 170 100 C170 50, 140 20, 100 20Z" fill="white"/>
+        <path d="M65 35 L50 10 L75 40Z" fill="white"/>
+        <path d="M135 35 L150 10 L125 40Z" fill="white"/>
+        <circle cx="80" cy="90" r="8" fill="#4A5E48"/>
+        <circle cx="120" cy="90" r="8" fill="#4A5E48"/>
+        <path d="M90 110 Q100 120 110 110" stroke="#4A5E48" stroke-width="2" fill="none"/>
+        <line x1="70" y1="95" x2="30" y2="90" stroke="#4A5E48" stroke-width="1.5"/>
+        <line x1="70" y1="100" x2="30" y2="100" stroke="#4A5E48" stroke-width="1.5"/>
+        <line x1="130" y1="95" x2="170" y2="90" stroke="#4A5E48" stroke-width="1.5"/>
+        <line x1="130" y1="100" x2="170" y2="100" stroke="#4A5E48" stroke-width="1.5"/>
+      </svg>
+    </div>
+    <div class="hero-info-card">
+      <div class="label">Hours</div>
+      <div class="value">Mon–Fri · 9am–6pm</div>
+    </div>
+  </div>
+</section>
+
+<!-- INFO STRIP -->
+<div class="info-strip">
+  <div class="info-item">
+    <div class="info-icon">📍</div>
+    <div>
+      <h3>Location</h3>
+      <p>459 Worcester St, Rt 9<br>Wellesley, MA 02481</p>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon">📞</div>
+    <div>
+      <h3>Phone</h3>
+      <p><a href="tel:7812376565">(781) 237-6565</a></p>
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon">🕐</div>
+    <div>
+      <h3>Hours</h3>
+      <p>Mon–Fri 9am–6pm<br>Sat: select dates — call ahead</p>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services" class="services-section">
+  <div class="section-label">What We Offer</div>
+  <h2 class="section-title">Complete feline <em>medicine</em><br>under one roof.</h2>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="svc-icon">🩺</div>
+      <h3>Wellness Exams</h3>
+      <p>Comprehensive physical examinations and preventative care for every life stage.</p>
+    </div>
+    <div class="service-card">
+      <div class="svc-icon">💉</div>
+      <h3>Medical Care</h3>
+      <p>Diagnosis and treatment of illness, with thorough clinical workups and lab testing.</p>
+    </div>
+    <div class="service-card">
+      <div class="svc-icon">🔬</div>
+      <h3>Surgery</h3>
+      <p>Soft tissue surgical procedures performed with precision and compassionate post-op care.</p>
+    </div>
+    <div class="service-card">
+      <div class="svc-icon">☢️</div>
+      <h3>Radiology</h3>
+      <p>On-site diagnostic imaging to get to the root of complex health concerns quickly.</p>
+    </div>
+    <div class="service-card">
+      <div class="svc-icon">🦷</div>
+      <h3>Dental Care</h3>
+      <p>Professional dental cleaning, prophylaxis, and oral health evaluation for your cat.</p>
+    </div>
+    <div class="service-card">
+      <div class="svc-icon">🐾</div>
+      <h3>Geriatric Care</h3>
+      <p>Specialized attention for senior cats, focusing on quality of life and comfort.</p>
+    </div>
+    <div class="service-card">
+      <div class="svc-icon">🥣</div>
+      <h3>Nutrition & Diets</h3>
+      <p>Guidance on optimal foods and therapeutic diets tailored to your cat's needs.</p>
+    </div>
+    <div class="service-card">
+      <div class="svc-icon">❤️</div>
+      <h3>Kitten Care</h3>
+      <p>Setting your kitten up for a lifetime of health with early preventative care.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" style="padding: 6rem 5rem;">
+  <div class="about-section">
+    <div class="about-img-wrap">
+      <div class="about-badge">
+        <span class="year">1999</span>
+        <span class="since">Est.</span>
+      </div>
+    </div>
+    <div class="about-text">
+      <div class="section-label">Our Team</div>
+      <h2 class="section-title">Dedicated to cats<br><em>only.</em></h2>
+      <p>At The Cat's Hospital, we believe your feline companion deserves a veterinary experience tailored entirely to their unique needs — a calm, dog-free environment staffed by professionals who understand feline behavior, physiology, and medicine at a deep level.</p>
+      <p>We will do everything possible to offer the very best in veterinary care to strengthen the bond you have with your cat, starting when they are a kitten and continuing into their old age.</p>
+      <div class="vet-name">Dr. Anthony Cosimini, DVM</div>
+      <div class="vet-title">Founder & Lead Veterinarian</div>
+      <p style="margin-top:0.75rem;">Dr. Cosimini graduated from <strong>Iowa State University College of Veterinary Medicine</strong> in 1986. After twelve years as an associate veterinarian, he founded The Cat's Hospital in 1999 — bringing over three decades of feline expertise to Wellesley.</p>
+    </div>
+  </div>
+</section>
+
+<!-- EMERGENCY -->
+<section id="emergency" class="emergency-section">
+  <div class="section-label">Urgent Care</div>
+  <h2 class="section-title">Emergency <em>information</em></h2>
+
+  <div class="after-hours">
+    <div>
+      <div class="after-hours-label">After-Hours On-Call Line</div>
+      <div class="after-hours-num">(774) 270-4627</div>
+    </div>
+    <p style="font-size:0.82rem; color:rgba(247,243,238,0.6); flex:1">Leave your name, cat's name, phone number, and reason for calling. If you haven't received a callback within 30 minutes, call again or contact an emergency hospital below.</p>
+  </div>
+
+  <div class="emergency-grid" style="margin-top:2.5rem">
+    <div class="emg-card">
+      <h4>Angell Animal Medical Center</h4>
+      <p>Boston &nbsp;·&nbsp; <a href="tel:6175227282">(617) 522-7282</a></p>
+    </div>
+    <div class="emg-card">
+      <h4>BluePearl</h4>
+      <p>Waltham &nbsp;·&nbsp; <a href="tel:7816848387">(781) 684-8387</a></p>
+    </div>
+    <div class="emg-card">
+      <h4>IVG Boston West</h4>
+      <p>Framingham &nbsp;·&nbsp; <a href="tel:5083192117">(508) 319-2117</a></p>
+    </div>
+    <div class="emg-card">
+      <h4>Tufts Foster Hospital</h4>
+      <p>Grafton &nbsp;·&nbsp; <a href="tel:5088395395">(508) 839-5395</a></p>
+    </div>
+    <div class="emg-card">
+      <h4>TuftsVETS</h4>
+      <p>Walpole &nbsp;·&nbsp; <a href="tel:5086685454">(508) 668-5454</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" style="padding: 6rem 5rem;">
+  <div class="contact-section">
+    <div class="contact-info">
+      <div class="section-label">Find Us</div>
+      <h2 class="section-title">Visit us in<br><em>Wellesley.</em></h2>
+
+      <h4>Address</h4>
+      <p>459 Worcester Street, Route 9<br>Wellesley, Massachusetts 02481</p>
+
+      <h4>Phone</h4>
+      <p><a href="tel:7812376565">(781) 237-6565</a></p>
+
+      <h4>Fax</h4>
+      <p>(781) 237-6333</p>
+
+      <h4>Hours</h4>
+      <p>Monday – Friday &nbsp; 9:00 am – 6:00 pm<br>
+      Saturday – select dates, call for availability</p>
+
+      <div style="margin-top:2rem">
+        <a href="tel:7812376565" class="btn-primary">Call to Book</a>
+      </div>
+    </div>
+    <div class="map-placeholder">
+      <div class="map-icon">🗺️</div>
+      459 Worcester St, Wellesley MA<br>
+      <a href="https://maps.google.com/?q=459+Worcester+Street+Wellesley+MA" target="_blank" style="color:var(--terracotta); font-family:var(--sans); font-size:0.8rem; font-style:normal; letter-spacing:0.08em; text-transform:uppercase; text-decoration:none; margin-top:0.5rem; display:block;">Open in Maps →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <strong style="font-family:var(--serif); font-weight:300">The Cat's Hospital, LLC</strong>
+    &nbsp;·&nbsp; Wellesley, MA &nbsp;·&nbsp;
+    <a href="tel:7812376565">(781) 237-6565</a>
+  </div>
+  <div class="footer-disclaimer">
+    Content on this website does not create a valid Veterinary Client Patient relationship and should not be used for diagnosis or treatment.
+  </div>
+</footer>
+
+</body>
+</html>
